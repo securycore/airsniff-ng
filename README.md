@@ -67,10 +67,57 @@ gen_speedport_w500
 
 ##### Using wordlists
 This wordlist is saved in wordlist/speedport-w500.txt. You now can use, to bruteforce the combinations:
-`àircrack -w [wordlist] cap`
+`aircrack -w [wordlist] cap`
+
+#### Use tab completion
+Airsniff-ng use the gnu-readline libary. So you can use the custom command completion. Implemented commands are:
+```
+show_modules
+show_help
+show_settings
+set_bssid
+set_ssid
+arp_poison
+set_gateway_ip
+set_target_ip
+set_target_mac
+set_channel
+set_interface
+gen_speedport_w500
+clear
+help
+quit
+```
+#### Help manual and other commands
+You can use the detailed help manual or the man page by using:
+```
+show_help
+help
+```
+All other commands get intepreted as normal bash commands,so that you don't have to exit everytime the program. Maybe in the future we will add a bash_mode ( bash command completion ) and a airsniff-ng mode ( with airsniff-ng command completion ).
+
+### Dokumentation
+#### Set settings
+`set_bssid [string]` - Set a custom bssid adress <br>
+`set_bssid [string]` - Set a custom ssid adress <br>
+`set_channel [string/int]` - Set a custom channel adress <br>
+`set_target_ip [string]` - Set a custom target ip for arp-poisoning <br>
+`set_target_gateway [string]` - Set the gateway ip for arp-poisoning <br>
+`set_interface [string]` - Set a custom interface, default none <br>
+#### Show 
+`show_modules` - Print all modules <br>
+`show_help` - Print the help and man manual <br>
+`show_settings` - Print all settings given by the user <br>
+### Attack
+`arp_poison` - Run arp_poisoning <br>
+`gen_speedport_w500` - Run the speedport generator <br>
+#### Clear
+`clear` - Clear the screen <br>
+`help` - Print the help and man manual <br>
+`quit` - Safe exit with 0 <br>
 
 ### Development
-We try always to improve the dotfiles. If you want to constibute create a pull request.
+We try always to improve your projects. If you want to constibute create a pull request.
 <br>
 <br>
  [![](https://img.shields.io/badge/Workflow-gitflow--branching--model-81A1C1.svg?style=flat-square)](http://nvie.com/posts/a-successful-git-branching-model) 
