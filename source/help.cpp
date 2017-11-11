@@ -1,0 +1,37 @@
+void help() {
+  std::cout << "\033[2J\033[1;1H"
+            << "------------- < Friendly > --------------\n"
+            << "Help \033[31m:\033[0m\t\t\t show_help or help \n"
+            << "Quit \033[31m:\033[0m\t\t\t quit\n"
+            << "Set ssid \033[31m:\033[0m\t\t set_ssid\n"
+            << "Set bssid \033[31m:\033[0m\t\t set_bssid\n"
+            << "Set channel \033[31m:\033[0m\t\t set_channel\n"
+            << "Set interface  \033[31m:\033[0m\t set_interface\n"
+            << "Show Modules \033[31m:\033[0m\t\t show_modules\n"
+            << "Show Settings \033[31m:\033[0m\t\t show_settings\n"
+            << "---------------- < MAN > ----------------\n\n"
+            << GREEN << "Help: \n"
+            << RESET << RED << " ~ " << RESET << BOLD << " Arguments:\n"
+            << RESET << "\t[" << GREEN << "+" << RESET "]"
+            << " show_help:\n"
+            << "\t[" << GREEN << "+" << RESET "]"
+            << " help:\n\n"
+            << RED << " ~ " << RESET << BOLD << "Description:\n"
+            << RESET << " Print the help manual \n\n"
+
+            << GREEN << "Quit: \n"
+            << RESET << RED << " ~ " << RESET << BOLD << " Arguments:\n"
+            << RESET << "\t[" << GREEN << "+" << RESET "]"
+            << " quit:\n\n"
+            << RED << " ~ " << RESET << BOLD << "Description:\n"
+            << RESET << " Quit with 0 \n\n"
+
+            << GREEN << "List Modules: \n"
+            << RESET << RED << " ~ " << RESET << BOLD << " Arguments:\n"
+            << RESET << "\t[" << GREEN << "+" << RESET "]"
+            << " show_modules:\n\n"
+            << RED << " ~ " << RESET << BOLD << "Description:\n"
+            << RESET << " Print all modules \n\n"
+            << "---------------- < MAN > ----------------\n";
+}
+
