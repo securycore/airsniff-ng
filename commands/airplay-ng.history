@@ -1,0 +1,5 @@
+set_ssid "WLAN-9A3907"
+set_ssid "WLAN-9A3907"
+set_bssid "00:12:BF:9A:39:41"
+set_bssid "00:12:BF:9A:39:41"
+gen_speedport_w500 
