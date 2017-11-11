@@ -17,8 +17,8 @@
 #include "libs/color.h"
 #include "print.cpp"
 #include "help.cpp"
-#include "arp-poison.cpp"
-#include "gen_speedport_w500.cpp"
+#include "modules/Arp-poison/arp-poison.cpp"
+#include "modules/Gen-wordlist/gen_speedport_w500.cpp"
 #include "readline.cpp"
 #include <stdio.h>
 #include <stdlib.h>
