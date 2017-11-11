@@ -122,6 +122,8 @@ We try always to improve your projects. If you want to constibute create a pull 
 <br>
  [![](https://img.shields.io/badge/Workflow-gitflow--branching--model-81A1C1.svg?style=flat-square)](http://nvie.com/posts/a-successful-git-branching-model) 
 
+### Credits
+I modified the webserver based on the [komancs](https://github.com/akoskovacs/komancs) webserver.
 ### Contribution
 
 Please report issues/bugs, feature requests and suggestions for improvements to the [issue tracker](https://github.com/deltaxflux/airsniff-ng/issues).
