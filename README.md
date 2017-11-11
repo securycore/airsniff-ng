@@ -50,6 +50,25 @@ arp_poison
 ##### Screenshots
 ![alt text](https://i.imgur.com/8Uj98MD.png)
 
+#### Speedport wordlist generator
+The speedport password generator generate a common sequenze for speedport routers. It reduces the amount of combinination greatly. Here is a quick calculation: <br>
+Possibile combinations: 8^93 = 9.73e83<br>
+Reduced amount of combinations: 1 million <br>
+<br>
+To use this module use following commands:
+```
+set_ssid "WLAN-9A3907"
+set_bssid "00:12:BF:9A:39:41"
+gen_speedport_w500 
+```
+
+##### Screenshots
+![alt text](https://i.imgur.com/qQF9quT.png)
+
+##### Using wordlists
+This wordlist is saved in wordlist/speedport-w500.txt. You now can use, to bruteforce the combinations:
+`àircrack -w [wordlist] cap`
+
 ### Development
 We try always to improve the dotfiles. If you want to constibute create a pull request.
 <br>
