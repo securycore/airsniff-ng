@@ -20,13 +20,13 @@
 #include "arp-poison.cpp"
 #include "gen_speedport_w500.cpp"
 #include "readline.cpp"
-#include <pcap.h>
 #include <stdio.h>
-#include <netinet/in.h>
-#include <netinet/ether.h>
-#include <arpa/inet.h>
 #include <stdlib.h>
-
+#include <arpa/inet.h>
+#include <netinet/ether.h>
+#include <netinet/in.h>
+#include <pcap.h>
+#include <stdlib.h>
 int main()
 {
     read_user_input();

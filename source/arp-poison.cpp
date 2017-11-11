@@ -1,3 +1,5 @@
+#define MAXLINE 256
+
 #include <arpa/inet.h>
 #include <netinet/ether.h>
 #include <netinet/in.h>
@@ -6,7 +8,6 @@
 #include <stdlib.h>
 #include <fstream>
 #include <string>
-#define MAXLINE 256
 
 void arp_main(const char *interface, const char *target_ip, const char *gateway_ip)
 {
