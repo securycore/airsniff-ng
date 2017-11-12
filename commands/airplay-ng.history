@@ -3,3 +3,13 @@ set_ssid "WLAN-9A3907"
 set_bssid "00:12:BF:9A:39:41"
 set_bssid "00:12:BF:9A:39:41"
 gen_speedport_w500 
+help
+help
+help
+help
+show_modules 
+show_modules 
+show_modules 
+clear
+clear
+ls

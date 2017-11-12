@@ -11,7 +11,6 @@ const char* cmd [] = {
     "arp_poison",
     "set_gateway_ip",
     "set_target_ip",
-    "set_target_mac",
     "set_channel",
     "set_interface",
     "show_settings",
@@ -80,7 +79,9 @@ void * xmalloc (int size)
 
 void show_modules ()
 {
-    std::cout << "No modules found \n";
+    std::cout << GREEN << BOLD << "Modules:\n" << RESET
+              << "[Arp spoofing]" << GREEN <<  "... working\n" << RESET
+              << "[Gen wordlist]" << GREEN << "... working\n" << RESET;
 }
 void read_user_input()
 {
