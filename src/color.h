@@ -4,15 +4,16 @@
  * Purpose: Colored output using ansci color codes
  */
 
+#ifndef AIRSNIFF_NG_COLOR_H
+#define AIRSNIFF_NG_COLOR_H
+
 // Foreground colors
-#define BLACK "\033[30m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
-#define YELLOW "\033[33m"
 #define BLUE "\033[34m"
 
 // Special output
 #define RESET "\033[0m"
 #define BOLD "\033[1m"
-#define UNDERLINE "\033[4m"
-#define INVERSE "\033[7m"
+
+#endif //AIRSNIFF_NG_COLOR_H
