@@ -77,7 +77,6 @@ void arp_main(const char *interface, const char *target_ip, const char *gateway_
         cout << RESET << "\n[" << RED << "-" << RESET << "]" << " Couldn't find default device:\n";
         exit(1);
     }
-    /* Find the properties for the device */
     if (pcap_lookupnet(dev, &net, &mask, errbuf) == -1) {
         cout << RESET << "\n[" << RED << "-" << RESET << "]" << " Couldn't get netmask for device\n";
         mask = 0;
@@ -129,17 +128,14 @@ void arp_main(const char *interface, const char *target_ip, const char *gateway_
         ltime=localtime(&local_tv_sec);
         strftime( timestr, sizeof timestr, "%H:%M:%S", ltime);
         cout << RESET << "[" << GREEN << "I" << RESET << "] " << "Header " << BLUE << header->ts.tv_usec << RESET << " Lenght: " << RED << header->len << RESET << std::endl;
-        //printf("[%s] Header: %.6d Lenght:%d\n", timestr, header->ts.tv_usec, header->len);
         eth=(struct ether_header *)pkt;
         arp=(struct ether_arp *)(pkt+ETH_HLEN);
-        /* Check ARP */
+
         if(ntohs(eth->ether_type) == ETHERTYPE_ARP ){
             sprintf(targetMAC, "%s", ether_ntoa(((ether_addr*)arp->arp_sha)));
             break;
         }
     }
-
-    /* Make packet to send ARP to Target */
 
     eth=(struct ether_header *)send_pkt;
     ether_aton_r(targetMAC, (struct ether_addr *)eth->ether_dhost);
@@ -155,7 +151,6 @@ void arp_main(const char *interface, const char *target_ip, const char *gateway_
     ether_aton_r(senderMAC, (struct ether_addr *)arp->arp_sha);
 
     inet_pton(AF_INET, gateway_ip, arp->arp_spa);
-    //memcpy(arp->arp_spa, senderIP,sizeof(struct in_addr));       //inet_pton(AF_INET, "192.168.1.1", arp->arp_spa);
     ether_aton_r(targetMAC, (struct ether_addr *)arp->arp_tha);
     inet_pton(AF_INET, target_ip, arp->arp_tpa);
 

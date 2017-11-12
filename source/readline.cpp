@@ -16,6 +16,7 @@ const char* cmd [] = {
     "show_settings",
     "gen_speedport_w500",
     "clear",
+    "clear_buff",
     "help",
     "quit" ,
     0 };
@@ -83,6 +84,9 @@ void show_modules ()
               << "[Arp spoofing]" << GREEN <<  "... working\n" << RESET
               << "[Gen wordlist]" << GREEN << "... working\n" << RESET;
 }
+// ============================================================================================
+// Manage input
+// ============================================================================================
 void read_user_input()
 {
 
@@ -93,28 +97,23 @@ void read_user_input()
     using std::vector;
     using namespace boost;
 
+    // Used as a command input
     char *buffer;
 
-    /*
-     * Variables definition
-     */
-    string command; // for input
-    string option; // only fist word from input line
-
-    /*
-     * User settings
-     */
+    // string to compare values
+    string command;
+    string option;
 
     float v = 1.0;
     vector<string> SET;
+
+    // ===========================================
+    // fill with random data
+    // ===========================================
     for (int i = 0; i<= 10;i++)
         SET.push_back("Not found");
-    /*
-     * BSSID at 0
-     * CHANNEL at 1
-     * SSID at 2
-     * INTERFACE at 3
-     */
+    // (0) BSSID 
+    // (1) SSSID
 
     // Menu for while loop
     bool Menu = true;
@@ -131,6 +130,7 @@ void read_user_input()
          <<  "                    -'  -'          `-' "
          << RESET << "(" << v << ")\n";
 
+    // we read history to memory
     read_history("commands/airplay-ng.history");
     while(Menu==true) {
 
@@ -141,12 +141,14 @@ void read_user_input()
         size_t last = command.find_last_not_of(' ');
         command = command.substr(0, (last+1));
 
+        // add command to buffer
         add_history(buffer);
         write_history("commands/airplay-ng.history");
 
         // char to string
         string command(buffer);
 
+        // split command into the first and secound command
         boost::char_separator<char> sep(" ");
         typedef boost::tokenizer< boost::char_separator<char> > t_tokenizer;
         t_tokenizer tok(command, sep);
@@ -161,9 +163,9 @@ void read_user_input()
         // Custom completion with tab
         rl_bind_key('\t',rl_complete);
 
-        /*
-         * Options
-         */
+        // ===========================================
+        // Menu
+        // ===========================================
         if (option == "help" || option == "show_help")
             help();
         else if (option == "show_modules")
@@ -190,18 +192,20 @@ void read_user_input()
             show_settings(SET.at(0),SET.at(2),SET.at(1),SET.at(3));
         else if ( option == "clear" )
             cout << "\033[2J\033[1;1H";
+        else if ( option == "clear_buff")
+            free(buffer);
         else if ( option == "gen_speedport_w500" )
             gen_speedport_w500(SET.at(0),SET.at(2));
         else if ( option != "")
             system(command.c_str());
-        /*
-         * Options
-         */
 
+        // ===========================================
+        // Menu
+        // ===========================================
         // Write to buffer
         add_history(buffer);
   }
-    // clear bufferfer
+    // clear buffer after exit the while loop
     free(buffer);
 }
 

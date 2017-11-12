@@ -13,3 +13,11 @@ show_modules
 clear
 clear
 ls
+ls
+set_target_ip 192.168.6.130
+set_target_ip 192.168.6.130
+set_interface wlp0s26u1u2
+set_interface wlp0s26u1u2
+set_gateway_ip 192.168.6.1
+set_gateway_ip 192.168.6.1
+arp_poison 
